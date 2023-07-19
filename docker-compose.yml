@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  dbdocker:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE= dbveterinaria
+    ports:
+      - 3306:3306

@@ -1,0 +1,9 @@
+//esto requiere babel para poder funcionar
+
+{
+  "presets": ["@babel/preset-env"]
+  // "plugins": ["@babel/plugin-transform-runtime"]
+
+}
+
+//para ejecutar hacemos npm run dev que es como jamamos en el package.json al script que ejecuta

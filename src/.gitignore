@@ -1,0 +1,8 @@
+# aca estan los archivos que ignoramos subir al repositorio git
+
+.env
+
+node_modules
+
+
+dist

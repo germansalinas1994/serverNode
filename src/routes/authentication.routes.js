@@ -10,7 +10,7 @@ const router = Router(); //instancio el router como una constante para poder usa
 router.post('/signUp',[verifyUsuario.validarResistroUsuario] ,userSignUp); // sign up es para registrarse
 
 
-router.post('/signin', userSignIn); 
+router.post('/signin', userSignIn); //sign in es para loguearse
 
 
 

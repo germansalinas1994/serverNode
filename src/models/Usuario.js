@@ -12,16 +12,33 @@ export const Usuario = dbConnection.define('Usuario', {
     },
     Nombre:{
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
 
     },
-    Email:{
+    Apellido:{
+        type: DataTypes.STRING,
+        allowNull: true,
+
+    },
+
+    Mail:{
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
+    Telefono:{
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+
+    Dni:{
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        // unique: true
+    },
+
     
-    Contrasenia :{ 
+    Password :{ 
         type : DataTypes.STRING,
         allowNull: true
     },  
@@ -65,13 +82,13 @@ Usuario.belongsTo(Rol, {
 });
 
 
-Usuario.encryptPassword = async (Contrasenia) => {
+Usuario.encryptPassword = async (Password) => {
     const salt = await bcrypt.genSalt(10);
     debugger;
-    return await bcrypt.hash(Contrasenia, salt);
+    return await bcrypt.hash(Password, salt);
 }
 
 
-Usuario.comparePassword = async (Contrasenia, receivedPassword) => {
-    return await bcrypt.compare(Contrasenia, receivedPassword);
+Usuario.comparePassword = async (Password, receivedPassword) => {
+    return await bcrypt.compare(Password, receivedPassword);
 }

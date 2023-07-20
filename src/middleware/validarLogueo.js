@@ -1,14 +1,15 @@
 import { Usuario } from "../models/Usuario"
 
 export const validarResistroUsuario = async (req, res, next) => {
-    const { Nombre, Apellido, Email, Password} = req.body;
+    debugger;
+    const { Nombre, Apellido, Mail, Password} = req.body;
     try {
 
         //TENGO QUE HACER ESTO CON EL EMAIL Y CON EL NOMBRE DE USUARIO QUE ELIJA EL USUARIO, FALTA LA PARTE DE HACERLO CON EL NOMBRE DE USUARIO
 
 
 
-        const usuario =  await Usuario.findOne({ where: { Email: req.body.Email } });
+        const usuario =  await Usuario.findOne({ where: { Mail: req.body.Mail } });
         debugger;
         if (usuario) {
             return res.status(400).json({ message: "El usuario ya existe" });

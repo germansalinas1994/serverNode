@@ -4,13 +4,13 @@ import { dbConnection } from './database/connnection' //importo la conexion a la
 //Puedo importar los modelos como para trabajar con  ellos si los necesito aca, por lo general no es necesario
 
 //para generar tablas nuevas desde los modelos que cree, tengo que hacer un sync, y para que se sincronicen tengo que importarlos aca
-import { Categoria } from "./models/Categoria";
-import { Producto } from "./models/Producto";
-// import { Prueba } from "./models/prueba";
+// import { Categoria } from "./models/Categoria";
+// import { Producto } from "./models/Producto";
+// // import { Prueba } from "./models/prueba";
 
-import { Usuario } from "./models/Usuario";
-import { Rol } from "./models/Rol";
-import { Sucursal } from "./models/Sucursal";
+// import { Usuario } from "./models/Usuario";
+// import { Rol } from "./models/Rol";
+// import { Sucursal } from "./models/Sucursal";
 
 
 async function main() {
@@ -24,7 +24,7 @@ async function main() {
     try {
 
 
-
+        
 
         //aca sincroniza la base de datos con los modelos que cree, si llego a importar algun modelo nuevo tengo que hacer un sync para que se sincronicen 
 
@@ -112,6 +112,12 @@ async function main() {
         const nombre = dbConnection.getDatabaseName();
         console.log(nombre);
 
+
+        // const roles = await Rol.findAll();
+        // console.log(roles);
+
+        // const usuarios = await Usuario.findAll();
+        // console.log(usuarios);
         // const roles = await Rol.findAll(); // console.log(roles);
         //ACA TERMINA LA PRUEBA DE LA CONEXION
 

@@ -17,16 +17,19 @@ export const userSignUp = async (req, res) => {
 
     try {
 
-        const { Nombre, Email, Contrasenia } = req.body;
+        const { Nombre, Apellido, Dni ,Mail, Password, Telefono } = req.body;
 
         const nuevoUsuario = await Usuario.create({
             Nombre: Nombre,
-            Email: Email,
-            Contrasenia: await Usuario.encryptPassword(Contrasenia),
+            Apellido: Apellido,
+            Mail: Mail,
+            Dni : Dni,
+            Telefono: Telefono,
+            Password: await Usuario.encryptPassword(Password),
             Id_Rol: config.rolCliente
 
         }, { transaction: transaction })
-
+        debugger;
         // console.log(nuevoUsuario);
         try {
             var usuario = await Usuario.findByPk(nuevoUsuario.Id, {
@@ -37,6 +40,7 @@ export const userSignUp = async (req, res) => {
                 transaction
             });
             console.log(usuario);
+            debugger;
 
         } catch (error) {
             console.log(error);
@@ -79,26 +83,26 @@ export const userSignUp = async (req, res) => {
 
 export const userSignIn = async (req, res) => {
 
-    const { Nombre, Email, Contrasenia } = req.body;
+    const { Mail, Password } = req.body;
 
     debugger;
 
+    //lo hago con transaccion porque es una consulta a la base de datos
     const transaction = await dbConnection.transaction();
 
     try {
 
         const user = await Usuario.findOne({
             where: {
-                Email: Email
+                Mail: Mail
             }
         }, { transaction: transaction });
-        debugger;
         if (!user) {
             return res.status(400).json({
                 message: "Usuario no encontrado"
             });
         }
-        const matchPassword = await Usuario.comparePassword(Contrasenia, user.Contrasenia); //compara la contraseña que viene del front end con la que esta en la base de datos y devuelve true o false
+        const matchPassword = await Usuario.comparePassword(Password, user.Password); //compara la contraseña que viene del front end con la que esta en la base de datos y devuelve true o false
         debugger;
         if (!matchPassword) {
             return res.status(401).json({

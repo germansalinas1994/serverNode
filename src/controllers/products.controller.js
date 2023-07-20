@@ -12,6 +12,7 @@ const uploadFile = require('../middleware/multer.js');
 
 export const getProducts = async (req, res) => {
 
+
     try {
         //esto es para generar un error de prueba por eso esta comentado
         // throw new Error("Error de prueba");
@@ -71,7 +72,6 @@ export const createNewProduct = async (req, res) => {
 
 
 export const getProductById = async (req, res) => {
-
     try {
         const { id } = req.params;
         const producto = await Producto.findByPk(id);
@@ -213,6 +213,7 @@ export const getProductosCategoria = async (req, res) => {
                 }]
             }
         );
+
 
         // res es la respuesta que retornamos a la peticion, cuando pido las categorias devuelvo todas las categorias de la base
         res.json(products);

@@ -5,7 +5,7 @@ import { dbConnection } from './database/connnection' //importo la conexion a la
 
 //para generar tablas nuevas desde los modelos que cree, tengo que hacer un sync, y para que se sincronicen tengo que importarlos aca
 // import { Categoria } from "./models/Categoria";
-// import { Producto } from "./models/Producto";
+import { Producto } from "./models/Producto";
 // // import { Prueba } from "./models/prueba";
 
 // import { Usuario } from "./models/Usuario";
@@ -28,7 +28,7 @@ async function main() {
 
         //aca sincroniza la base de datos con los modelos que cree, si llego a importar algun modelo nuevo tengo que hacer un sync para que se sincronicen 
 
-        // await dbConnection.sync();
+        await dbConnection.sync();
 
 
         // //ACA EMPIEZA LA PRUEBA DE LA CONEXION CON ORM
@@ -113,8 +113,8 @@ async function main() {
         console.log(nombre);
 
 
-        const roles = await Rol.findAll();
-        console.log(roles);
+        // const roles = await Rol.findAll();
+        // console.log(roles);
 
         // const usuarios = await Usuario.findAll();
         // console.log(usuarios);

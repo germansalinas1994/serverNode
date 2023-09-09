@@ -18,6 +18,7 @@ export const getProducts = async (req, res) => {
         // throw new Error("Error de prueba");
 
         const products = await Producto.findAll();
+        debugger;
 
         // res es la respuesta que retornamos a la peticion, cuando pido las categorias devuelvo todas las categorias de la base
         res.json(products);
@@ -36,7 +37,8 @@ export const getProducts = async (req, res) => {
 }
 
 export const createNewProduct = async (req, res) => {
-    const { Nombre, Descripcion, Precio, Stock, Id_Categoria, Url_Imagen } = req.body; //desestructuro el objeto req.body para obtener los datos que necesito
+    debugger;
+    const { Nombre, Descripcion, Precio, Id_Categoria, Url_Imagen } = req.body; //desestructuro el objeto req.body para obtener los datos que necesito
     try {
         if (Nombre == null || Descripcion == null || Precio == null || Id_Categoria == null) {
             return res.status(400).json({ message: "Faltan datos" });
@@ -46,14 +48,14 @@ export const createNewProduct = async (req, res) => {
             return res.status(404).json({ message: "Categoria no encontrada" });
         }
 
-
+        debugger;   
         const nuevoproducto = await Producto.create({
             Nombre: Nombre,
             Descripcion: Descripcion,
             Precio: Precio,
-            Stock: Stock,
+            Url_Imagen: Url_Imagen,
+            Marca: '',
             Id_Categoria: Id_Categoria,
-            Url_Imagen: Url_Imagen
 
         })
         res.json(nuevoproducto);
@@ -214,7 +216,7 @@ export const getProductosCategoria = async (req, res) => {
             }
         );
 
-
+        debugger;
         // res es la respuesta que retornamos a la peticion, cuando pido las categorias devuelvo todas las categorias de la base
         res.json(products);
 

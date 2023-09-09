@@ -22,12 +22,13 @@ export const Producto = dbConnection.define('Producto', {
         type : DataTypes.FLOAT,
         allowNull: false
     },
-    Stock :{ 
-        type: DataTypes.INTEGER,
-        allowNull: true
-    },
     Url_Imagen :{
         type: DataTypes.STRING,
+    },
+    Marca:{
+        type: DataTypes.STRING,
+        allowNull: true,
+
     },
     Id_Categoria: {
         type: DataTypes.INTEGER,

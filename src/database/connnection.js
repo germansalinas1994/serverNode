@@ -3,34 +3,10 @@ import {Sequelize} from 'sequelize' //importo el ORM sequelize para poder conect
 import config from "../config";
 
 //Exporto la conexion a la base de datos con sequelize, para incorporarla en los modelos que necesite y tener la conexion en un modelo
-export const dbConnection = new Sequelize(config.database, config.dbUser, config.dbPassword,{
-    server: config.dbServer,
-    database: config.database,
-    dialect: config.dbDialect,
-    dialectOptions: {
-        options: {
-            encrypt: true,
-            enableArithAbort: true,
-            trustServerCertificate: true,
-
-        }
-    },
-    define: {
-        timestamps: false,
-        freezeTableName: true
-    }
-})
-
-
-
-
-
-
-//BASE DE DATOS DE MY SQL
-
 // export const dbConnection = new Sequelize(config.database, config.dbUser, config.dbPassword,{
-//     host: 'localhost',
-//     dialect: 'mysql',
+//     server: config.dbServer,
+//     database: config.database,
+//     dialect: config.dbDialect,
 //     dialectOptions: {
 //         options: {
 //             encrypt: true,
@@ -43,8 +19,32 @@ export const dbConnection = new Sequelize(config.database, config.dbUser, config
 //         timestamps: false,
 //         freezeTableName: true
 //     }
+// })
 
-//   });
+
+
+
+
+
+//BASE DE DATOS DE MY SQL
+
+export const dbConnection = new Sequelize(config.database, config.dbUser, config.dbPassword,{
+    host: 'localhost',
+    dialect: 'mysql',
+    dialectOptions: {
+        options: {
+            encrypt: true,
+            enableArithAbort: true,
+            trustServerCertificate: true,
+
+        }
+    },
+    define: {
+        timestamps: false,
+        freezeTableName: true
+    }
+
+  });
 
 
 

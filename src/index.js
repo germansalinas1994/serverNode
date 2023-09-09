@@ -9,7 +9,7 @@ import { dbConnection } from './database/connnection' //importo la conexion a la
 // // import { Prueba } from "./models/prueba";
 
 // import { Usuario } from "./models/Usuario";
-// import { Rol } from "./models/Rol";
+import { Rol } from "./models/Rol";
 // import { Sucursal } from "./models/Sucursal";
 
 
@@ -113,8 +113,8 @@ async function main() {
         console.log(nombre);
 
 
-        // const roles = await Rol.findAll();
-        // console.log(roles);
+        const roles = await Rol.findAll();
+        console.log(roles);
 
         // const usuarios = await Usuario.findAll();
         // console.log(usuarios);

@@ -30,7 +30,7 @@ import config from "../config";
 
 export const dbConnection = new Sequelize(config.database, config.dbUser, config.dbPassword,{
     host: 'localhost',
-    dialect: 'mysql',
+    dialect: config.dbDialect,
     dialectOptions: {
         options: {
             encrypt: true,

@@ -6,7 +6,7 @@ export const Sucursal = dbConnection.define('Sucursal', {
     Id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: false
     },
     Nombre:{
         type: DataTypes.STRING,
@@ -14,7 +14,7 @@ export const Sucursal = dbConnection.define('Sucursal', {
     },
     Direccion:{
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
 },
 {

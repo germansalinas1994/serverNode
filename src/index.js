@@ -113,6 +113,7 @@ async function main() {
         console.log(nombre);
 
 
+
         // const roles = await Rol.findAll();
         // console.log(roles);
 

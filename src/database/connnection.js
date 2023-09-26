@@ -28,6 +28,8 @@ import config from "../config";
 
 //BASE DE DATOS DE MY SQL
 
+
+
 export const dbConnection = new Sequelize(config.database, config.dbUser, config.dbPassword,{
     host: 'localhost',
     dialect: config.dbDialect,

@@ -12,6 +12,7 @@ const jwt = require("jsonwebtoken"); //esto es para poder usar el token
 
 //EL SIGN UP ES PARA REGISTRARSE
 export const userSignUp = async (req, res) => {
+    debugger;
 
     const transaction = await dbConnection.transaction();
 

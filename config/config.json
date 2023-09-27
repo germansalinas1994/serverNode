@@ -1,41 +1,23 @@
 {
   "development": {
-    "username": "sa",
-    "password": "bdLocalHost1234",
-    "database": "DBVeterinaria",
-    "host": "localhost",
-    "dialect": "mssql",
-    "dialectOptions": {
-      "options": {
-        "encrypt": true,
-        "trustServerCertificate": true
-      }
-    }
+    "username": "root",
+    "password": "12345678",
+    "database": "dbveterinaria",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "test": {
-    "username": "sa",
-    "password": "bdLocalHost1234",
-    "database": "DBVeterinaria",
-    "host": "localhost",
-    "dialect": "mssql",
-    "dialectOptions": {
-      "options": {
-        "encrypt": true,
-        "trustServerCertificate": true
-      }
-    }
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "production": {
-    "username": "sa",
-    "password": "bdLocalHost1234",
-    "database": "DBVeterinaria",
-    "host": "localhost",
-    "dialect": "mssql",
-    "dialectOptions": {
-      "options": {
-        "encrypt": true,
-        "trustServerCertificate": true
-      }
-    }
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
